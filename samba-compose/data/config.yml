@@ -1,0 +1,34 @@
+auth:
+  - user: foo
+    group: foo
+    uid: 1000
+    gid: 1000
+    password: bar
+
+global:
+  - "force user = foo"
+  - "force group = foo"
+
+share:
+  - name: public
+    comment: Public
+    path: /samba/public
+    browsable: yes
+    readonly: yes
+    guestok: yes
+    veto: no
+    recycle: no
+  - name: share
+    path: /samba/share
+    browsable: yes
+    readonly: no
+    guestok: yes
+    writelist: foo
+    veto: no
+  - name: pictures
+    path: /samba/pictures
+    browsable: yes
+    readonly: yes
+    guestok: yes
+    veto: yes
+    recycle: no
